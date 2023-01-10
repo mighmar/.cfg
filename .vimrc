@@ -113,7 +113,7 @@ endfunction
 :nnoremap <leader>q :call CloseBuffer()<CR>
 
 " Open NERDTree with Ctrl-n
-nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 " Open current file with \nf
 nnoremap <leader>nf :NERDTreeFind<CR>
 
