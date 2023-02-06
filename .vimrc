@@ -48,7 +48,11 @@ Plugin 'mbbill/undotree'
 " Bazel integration
 Plugin 'lakshayg/vim-bazel'
 
+" Manipulating parentheses
 Plugin 'tpope/vim-surround'
+
+" Open buffers in another editor
+Plugin 'mighmar/vim-igor'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -139,7 +143,6 @@ autocmd BufWinLeave * call clearmatches()
 function! Formatonsave()
   let l:formatdiff = 1
   py3f /usr/share/vim/addons/syntax/clang-format-14.py
-  echo "EHEJ"
 endfunction
 autocmd BufWritePre *.h,*.hpp,*.cc,*.cpp call Formatonsave()
 
@@ -167,3 +170,5 @@ nnoremap <C-t> :call OpenScratchBuffer()<CR>
 " Set folds to follow syntax and default to open folds
 :set foldmethod=syntax
 :set nofoldenable
+
+:nnoremap <leader>i :call AlternativeEditor()<CR>
