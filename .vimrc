@@ -172,3 +172,6 @@ nnoremap <C-t> :call OpenScratchBuffer()<CR>
 :set nofoldenable
 
 :nnoremap <leader>i :call AlternativeEditor()<CR>
+
+" Stop the bug marking braces inside brackets as a syntax error
+:let c_no_curly_error=1
