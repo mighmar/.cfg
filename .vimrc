@@ -94,8 +94,8 @@ inoremap jj <Esc>
 :nnoremap <C-j> :bprevious<CR>
 
 " Move through quickfix items with Ctrl-h and Ctrl-l
-:nnoremap <C-h> :cnext<CR>
-:nnoremap <C-l> :cprevious<CR>
+:nnoremap <C-l> :cnext<CR>
+:nnoremap <C-h> :cprevious<CR>
 
 " Toggle line numbers
 :nnoremap <leader>l :set invnumber<CR>
