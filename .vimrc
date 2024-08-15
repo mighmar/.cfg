@@ -121,6 +121,9 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 " Open current file with \nf
 nnoremap <leader>nf :NERDTreeFind<CR>
 
+" On some devices it needs to be enabled manually
+syntax enable
+
 " Allow to switch unsaved buffers
 set hidden
 
