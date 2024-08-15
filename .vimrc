@@ -143,11 +143,11 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 " Use Clang-Format on save
-function! Formatonsave()
-  let l:formatdiff = 1
-  py3f /usr/share/vim/addons/syntax/clang-format-14.py
-endfunction
-autocmd BufWritePre *.h,*.hpp,*.cc,*.cpp call Formatonsave()
+" function! Formatonsave()
+"   let l:formatdiff = 1
+"   py3f /usr/share/vim/addons/syntax/clang-format-14.py
+" endfunction
+" autocmd BufWritePre *.h,*.hpp,*.cc,*.cpp call Formatonsave()
 
 " (Doesn't work)
 " Reload all buffers on <leader>-l
