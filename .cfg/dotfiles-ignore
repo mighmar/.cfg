@@ -1,0 +1,10 @@
+# Ignore everything by default
+*
+# But track these explicitly
+!.vimrc
+!.bashrc
+!.cfg/
+!.cfg/dotfiles-ignore
+!.config/
+!.config/nvim/
+!.config/nvim/init.vim
