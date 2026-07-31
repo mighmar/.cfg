@@ -54,6 +54,9 @@ Plugin 'tpope/vim-surround'
 " Open buffers in another editor
 Plugin 'mighmar/vim-igor'
 
+" Claude Code IDE integration
+Plugin 'coder/claudecode.nvim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -178,3 +181,32 @@ nnoremap <C-t> :call OpenScratchBuffer()<CR>
 
 " Stop the bug marking braces inside brackets as a syntax error
 :let c_no_curly_error=1
+
+" Claude Code IDE integration (coder/claudecode.nvim)
+" Only runs under Neovim, since this plugin requires Lua/vim.loop.
+if has('nvim')
+lua << EOF
+require("claudecode").setup({
+  -- No snacks.nvim installed, so this falls back to the built-in
+  -- native terminal provider automatically.
+  terminal = {
+    split_side = "right",
+    split_width_percentage = 0.30,
+  },
+})
+EOF
+
+nnoremap <leader>ac :ClaudeCode<CR>
+nnoremap <leader>af :ClaudeCodeFocus<CR>
+nnoremap <leader>ar :ClaudeCode --resume<CR>
+nnoremap <leader>aC :ClaudeCode --continue<CR>
+nnoremap <leader>am :ClaudeCodeSelectModel<CR>
+nnoremap <leader>ab :ClaudeCodeAdd %<CR>
+vnoremap <leader>as :ClaudeCodeSend<CR>
+nnoremap <leader>aa :ClaudeCodeDiffAccept<CR>
+nnoremap <leader>ad :ClaudeCodeDiffDeny<CR>
+
+" Exit terminal-mode (e.g. in the Claude Code split) to Normal mode.
+" Not mapped to <Esc> since Claude Code's own TUI uses Esc to cancel.
+tnoremap <C-q> <C-\><C-n>
+endif
